@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.board{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.control{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.control h1{
+  text-transform: uppercase;
+  font-size: 20px;  
+}
+.control .complete{
+  color: #00ea00;
+}
+.control .fail{
+  color: red;
+}
+.control>div{
+  display: flex;
+  gap: 50px;
+}
+.control div input{
+  width: 100px;
+  padding: 0 5px;
+}
+.control .btns {
+  justify-content: space-between;
+}
+.control .btns button{
+  width: fit-content;
+  padding: 0 20px;
+  cursor: pointer;
+}
+.display{
+  width: 600px;
+  height: 600px;
+  border: 1px solid;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.element{
+  position: absolute;
+  border-radius: 50%;
+  padding: 20px;
+  border: 1px solid;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  user-select: none;
+  background-color: #ffffff;
+  font-weight: 700;
+}
+.disappear{
+  animation: disappear 1s infinite linear;
+}
+.hint{
+  animation: hint 1s infinite ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes disappear {
+  to{
+    background-color: #ff6c6c;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@keyframes hint {
+  0%{
+    background-color: #ffffff;
+  }
+  50%{
+    background-color: #bcefbc;
+  }
+  100%{
+    background-color: #ffffff;
   }
 }
