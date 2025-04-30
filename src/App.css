@@ -42,6 +42,10 @@ body{
 .control .btns {
   justify-content: space-between;
 }
+.control .btns div{
+  display: flex;
+  gap: 10px;
+}
 .control .btns button{
   width: fit-content;
   padding: 0 20px;
@@ -57,30 +61,43 @@ body{
 .element{
   position: absolute;
   border-radius: 50%;
-  padding: 20px;
-  border: 1px solid;
+  padding: 25px;
+  border: 1px solid #ff3131;
   width: 50px;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   cursor: pointer;
   top: 0;
   left: 0;
   user-select: none;
   background-color: #ffffff;
   font-weight: 700;
+  font-size: 14px;
+}
+.element span{
+  color: #ffffff;
+  font-weight: 400;
+}
+.element.pause{
+  animation-play-state: paused;
 }
 .disappear{
-  animation: disappear 1s infinite linear;
+  animation: disappear 3s 1 linear forwards;
 }
 .hint{
   animation: hint 1s infinite ease-in-out;
 }
 
 @keyframes disappear {
+  from{
+    background-color: #ff3131;
+    opacity: 1;
+  }
   to{
-    background-color: #ff6c6c;
+    opacity: 0;
   }
 }
 
